@@ -46,5 +46,10 @@ if __name__ == '__main__':
   paths = mkdir(path)
   
   html = getHtml(url)#获取该网址网页详细信息，得到的html就是网页的源代码
-  print("抓取的页面:",html)
+  #print("抓取的页面:",html)
+  filePath = paths+"html.txt"
+  f=open(filePath,"w+")
+  f.write("抓取的页面:\n")
+  f.write(html)
+  f.close()
   getImg(html,paths) #从网页源代码中分析并下载保存图片
